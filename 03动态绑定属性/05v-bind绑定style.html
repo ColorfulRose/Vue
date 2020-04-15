@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+    <script src="../vue.js"> </script>
+	</head>
+	<body>
+    <div id='app'>
+      <!-- <h2 :style="{fontSize:'50px'}">{{message}}</h2> -->
+      <h2 :style="{fontSize:finalsize,background:finalcolor}">{{message}}</h2>
+      <h2 :style="getStyle()">{{message}}</h2>
+    </div> 
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data:{
+          message: '你好',
+          finalsize:'100px',
+          finalcolor:'red'
+        },
+        methods:{
+          getStyle:function(){
+            return {fontSize:this.finalsize,background:this.finalcolor}
+          }
+        }
+      })
+    </script>
+	</body>
+</html>
