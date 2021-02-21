@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    setTimeout(() => {
+      console.log(this);//this 是 window
+    })
+    //结论:箭头函数中的this引用的就是最近作用域中的this 向外层外层一层层查找this直到找到this
+    // const obj = {
+    //   aaa() {
+    //     setTimeout(function () {
+    //         console.log(this)//window
+    //     })
+    //     setTimeout(() => {
+    //       console.log(this)//obj
+    //     })
+    //   }
+    //
+    // }
+    const obj = {
+      aaa() {
+        setTimeout(function () {
+          setTimeout(function () {
+            console.log(this) //window
+          })
+
+          setTimeout(function () {
+            console.log(this) //window
+          })
+        })
+
+        setTimeout(() => {
+          setTimeout(() => {
+            console.log(this)// window
+          })
+        })
+
+        setTimeout(() => {
+          console.log(this)//obj
+        })
+      }
+
+    }
+</script>
 </body>
 </html>
