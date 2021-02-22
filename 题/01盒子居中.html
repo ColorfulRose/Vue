@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    html,body{
+      height: 100%;
+      overflow: hidden;
+    }
+    .box{
+      box-sizing: border-box;
+      width:100px;
+      height: 50px;
+      line-height: 48px;
+      text-align: center;
+      border: 1px solid lightcoral;
+    }
+    /* 定位 */
+    body{
+      position: relative;
+    }
+    /* 定位1  一定要知道宽高*/
+    /*.box{*/
+    /*  position: absolute;*/
+    /*  top:50%;*/
+    /*  left:50%;*/
+    /*  margin-top:-25px;*/
+    /*  margin-left:-50px;*/
+    /*}*/
+
+  /*  定位2 不用考虑宽高 但是一定要有宽高*/
+  /*  .box{*/
+  /*    position: absolute;*/
+  /*    top:0;*/
+  /*    left:0;*/
+  /*    right: 0;*/
+  /*    bottom: 0;*/
+  /*    margin: auto;*/
+  /*  }*/
+
+    /*  css3 不需要具体宽高 不兼容 */
+    /*.box{*/
+    /*  position: absolute;*/
+    /*  top: 50%;*/
+    /*  left: 50%;*/
+    /*  transform: translate(-50%,-50%);*/
+    /*}*/
+
+    /* 移动端常用 */
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* 方法4 JS方法 获取当前屏幕的宽和高 以及盒子的宽和高 用屏幕宽高-盒子宽高 在/2 */
+
+
+  </style>
+</head>
+<!--盒子居中 5种方案
+  定位：三种
+  display：flex
+  javascript
+  display:table-cell
+    这种需求在我之前的项目中是非常常见的，刚开始我用的是。。。后来随着css3的
+  兴起，flex方法特别方便，后来在网络看别人的博客发现display:table-cell也
+  可以实现，但是不常用
+-->
+<body>
+  <div class = "box">盒子居中</div>
+</body>
+</html>

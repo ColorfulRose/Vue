@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    <div id='app'>
+      <h2>{{message}}</h2>
+      <cpn></cpn>
+      <!-- 有多个标签一起替换 -->
+      <cpn><button>按钮</button></cpn>
+      <cpn><span>span</span></cpn>
+    </div> 
+    
+    <template id="cpn">
+      <div>
+        <h2>我是组件</h2>
+        <p>我是同一个组件</p>
+        <!-- slot里面加了东西 就是默认的   -->
+        <!-- <slot>
+          <button>按钮</button>
+        </slot> -->
+        <slot></slot>
+      </div>
+    </template>
+    <script src='../vue.js'></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data:{
+          message: '你好'
+        },
+        components:{
+          cpn:{
+            template: '#cpn'
+          }
+          }
+      })
+    </script>
+	</body>
+</html>

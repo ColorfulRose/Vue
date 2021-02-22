@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    <div id='app'>
+      <h2>{{message}}</h2>
+      <cpn></cpn>
+      <cpn><span  slot="first">代替一</span></cpn>
+    </div> 
+    
+    <template id="cpn">
+      <div>
+        <h2>我是组件</h2>
+        <slot name="first">1</slot>
+        <slot name="second">2</slot>
+        <slot name="third">3</slot>
+      </div>
+    </template>
+    <script src='../vue.js'></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data:{
+          message: '你好'
+        },
+        components:{
+          cpn:{
+            template: '#cpn'
+          }
+        }
+      })
+    </script>
+	</body>
+</html>

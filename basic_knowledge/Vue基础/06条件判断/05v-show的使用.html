@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    <!-- 消失的方式不同 -->
+    <!-- 
+     v-if:当条件为false  包含v-if指令的元素不会存在在dom中 切换是要重新创建
+     v-show:条件为false,v-show只是给元素添加一个display:none 改变行间样式
+     切换频率高时 使用v-show 切换频率低使用v-if
+     -->
+    <div id='app'>
+      <h2 v-if="isShow" id="aaa">{{message}}</h2>
+      <h2 v-show="isShow" id="bbbb">{{message}}</h2>
+    </div> 
+    <script src='../vue.js'></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data:{
+          message: '你好',
+          isShow: false
+        }
+      })
+    </script>
+	</body>
+</html>

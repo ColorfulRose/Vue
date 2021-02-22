@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--<div id ="app">-->
+<!--  <h2>总价格：{{tallprice}}</h2>-->
+<!--</div>-->
+
+<div id="sign">
+  <span v-if = "isUser" >
+    <label for="username">用户账户</label>
+    <input type="text" id="username" placeholder="用户账户">
+  </span>
+  <span v-else>
+    <label for="email">用户邮箱</label>
+    <input type="text" id="email" placeholder="用户邮箱">
+  </span>
+  <button @click = "isUser=!isUser">类型转换</button>
+</div>
+</body>
+<script type="text/javascript" src = vue.js></script>
+<script>
+  // const app = new Vue({
+  //   el : "#app",
+  //   data:{
+  //     books:[
+  //       {id: 110,name: 'vue入门',price: 34},
+  //       {id: 111,name: 'python入门',price: 34},
+  //       {id: 112,name: 'Java入门',price: 34},
+  //       {id: 113,name: 'c++入门',price: 34}
+  //     ]
+  //   },
+  //   computed:{
+  //     tallprice:function () {
+  //       let result = 0
+  //
+  //       // for (let i  in this.books){
+  //       //   result += this.books[i].price
+  //       // }
+  //
+  //       for (let book of this.books){
+  //         result += book.price
+  //       }
+  //       return result
+  //     }
+  //   }
+  //
+  // })
+
+  const  app = new Vue({
+    el:"#sign",
+    data:{
+      isUser:true
+    }
+  })
+
+</script>
+</html>
