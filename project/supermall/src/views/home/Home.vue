@@ -1,6 +1,12 @@
 <template>
   <div id="home">
-    首页
+    <nav-bar class="home-nav">
+      <template v-slot:left ></template>
+      <template v-slot:center>
+        <div>购物车</div>
+      </template>
+      <template v-slot:right></template>
+    </nav-bar>
   </div>
 </template>
 
@@ -11,7 +17,7 @@
   // import RecommendView from "./childComps/RecommendView";
   // import FeatureView from "./childComps/FeatureView";
   //公共组件
-  // import NavBar from "../../components/common/navbar/NavBar";
+  import NavBar from "../../components/common/navbar/NavBar";
   // import TabControl from "../../components/content/tabControl/TabControl";
   // import GoodsList from "../../components/content/goods/GoodsList";
   // import Scroll from "../../components/common/scroll/Scroll";
@@ -23,7 +29,9 @@
 
   export default {
     name: "Home",
-
+    components:{
+      NavBar
+    }
   }
 </script>
 
